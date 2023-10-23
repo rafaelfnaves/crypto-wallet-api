@@ -1,24 +1,41 @@
-# README
+# Crypto Wallet API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+API for querying cryptocurrencies
+---
 
 * Ruby version
+ - 3.1.2
 
-* System dependencies
+* Dependencies
+ - rails 7.0.8
+ - postgresql 14
 
 * Configuration
+  `bundle install`
 
 * Database creation
-
+  `rails db:create`
 * Database initialization
+  `rails db:migrate`
 
-* How to run the test suite
+* How to run the api
+  - **Create .env on root_path ('/') and add:**
+    ```
+    API_KEY=
+    SECRET_KEY=
+    ```
+  - **Get a FREE API KEY on CoinsAPI and past env:** [API_KEY](https://docs.coinapi.io/market-data/rest-api/metadata/list-all-assets)
+
+  - **Get Secret and past env:**
+    `EDITOR="code --wait" rails credentials:edit `
+
+  - **Create coins on db:**
+    `rails rest:create_coins`
+
+  - **Requests example present on file:** `test_requests.http` (*Using Rest Client on VSCode*)
 
 * Services (job queues, cache servers, search engines, etc.)
+`rails rest:create_coins`
 
-* Deployment instructions
-
-* ...
+* Docs
+  - [API Docs](https://documenter.getpostman.com/view/15514870/2s7Z18B1Kc)
