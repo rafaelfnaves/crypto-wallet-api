@@ -1,4 +1,6 @@
 class Coin < ApplicationRecord
+  has_and_belongs_to_many :wallets
+
   paginates_per 15
 
   def self.get_coins

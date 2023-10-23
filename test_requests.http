@@ -15,7 +15,7 @@ POST http://localhost:3000/login
 content-type: application/json
 
 {
-  "username": "rafaelnaves", 
+  "username": "rafael@email.com", 
   "password": "123456"
 }
 
@@ -34,5 +34,40 @@ Authorization: Basic Token
 ### Get unique coin with asset_id
 
 GET http://localhost:3000/coins/BTC
+content-type: application/json
+Authorization: Basic Token
+
+### Create Wallet
+
+POST http://localhost:3000/wallets
+content-type: application/json
+Authorization: Basic Token
+
+{
+  "description": "Carteira Teste", 
+  "user_id": 2,
+  "coins": ["BTC", "ETH", "LTC"]
+}
+
+### GET Wallet
+
+GET http://localhost:3000/wallets/6
+content-type: application/json
+Authorization: Basic Token
+
+### UPDATE Wallet
+
+PUT http://localhost:3000/wallets/5
+content-type: application/json
+Authorization: Basic Token
+
+{
+  "description": "Nova Carteira Teste", 
+  "coins": ["BTC", "LTC"]
+}
+
+### DELETE Wallet
+
+DELETE http://localhost:3000/wallets/6
 content-type: application/json
 Authorization: Basic Token

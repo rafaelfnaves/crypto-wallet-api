@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   resources :coins
+  resources :wallets
 end
