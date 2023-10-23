@@ -1,3 +1,5 @@
+### Sign UP (Create user)
+
 POST http://localhost:3000/users
 content-type: application/json
 
@@ -7,7 +9,7 @@ content-type: application/json
   "name": "Rafael Naves"
 }
 
-###
+### Login
 
 POST http://localhost:3000/login
 content-type: application/json
@@ -17,8 +19,20 @@ content-type: application/json
   "password": "123456"
 }
 
-###
+### Get token with auto_login
 
 GET http://localhost:3000/auto_login
+content-type: application/json
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.AMN4RUFphNOk_5rNRWYo_mynBlGWu29XlLSKYdYtfBs
+
+### Get coins
+
+GET http://localhost:3000/coins
+content-type: application/json
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.AMN4RUFphNOk_5rNRWYo_mynBlGWu29XlLSKYdYtfBs
+
+### Get unique coin with asset_id
+
+GET http://localhost:3000/coins/BTC
 content-type: application/json
 Authorization: Basic eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.AMN4RUFphNOk_5rNRWYo_mynBlGWu29XlLSKYdYtfBs

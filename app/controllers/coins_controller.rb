@@ -1,5 +1,7 @@
-class Api::V1::CoinsController < ApplicationController
+class CoinsController < ApplicationController
+  before_action :authorized
   before_action :set_coin, only: :show
+  
   # GET /api/v1/coins
   def index
     @coins = Coin.all
