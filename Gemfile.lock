@@ -70,6 +70,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -85,6 +86,10 @@ GEM
     devise-jwt (0.11.0)
       devise (~> 4.0)
       warden-jwt_auth (~> 0.8)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     dry-auto_inject (1.0.1)
       dry-core (~> 1.0)
       zeitwerk (~> 2.6)
@@ -119,6 +124,8 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    net-http (0.3.2)
+      uri
     net-imap (0.4.2)
       date
       net-protocol
@@ -132,6 +139,11 @@ GEM
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     psych (5.1.1.1)
       stringio
     puma (5.6.7)
@@ -184,6 +196,7 @@ GEM
     timeout (0.4.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uri (0.12.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     warden-jwt_auth (0.8.0)
@@ -204,7 +217,10 @@ DEPENDENCIES
   debug
   devise
   devise-jwt
+  dotenv-rails
   jsonapi-serializer
+  net-http
+  pry-rails
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.8)
