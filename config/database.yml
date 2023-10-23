@@ -2,18 +2,17 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-  username: rafaelnaves
-  password: 
 
 development:
   <<: *default
   database: crypto_wallet_api_development
+  username: rafaelnaves
+  password: 
 
 test:
   <<: *default
   database: crypto_wallet_api_test
 
-# production:
-#   <<: *default
-#   database: crypto_wallet_api_production
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
