@@ -54,3 +54,7 @@ end
 
 # requests
 gem 'net-http'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
+# Paginate in your headers, not in your response body. This follows the proposed RFC-8288 standard for Web linking.
+gem 'api-pagination'

@@ -4,8 +4,8 @@ class CoinsController < ApplicationController
   
   # GET /api/v1/coins
   def index
-    @coins = Coin.all
-    render json: @coins
+    @coins = Coin.all.page params[:page]
+    paginate json: @coins
   end
 
   # GET /api/v1/coins/:id

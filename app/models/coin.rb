@@ -1,4 +1,6 @@
 class Coin < ApplicationRecord
+  paginates_per 15
+
   def self.get_coins
     url = URI("https://rest.coinapi.io/v1/assets")
     http = Net::HTTP.new(url.host, url.port)
