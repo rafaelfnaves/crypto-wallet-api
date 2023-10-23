@@ -24,10 +24,10 @@ API for querying cryptocurrencies
     API_KEY=
     SECRET_KEY=
     ```
-  - **Get a FREE API KEY on CoinsAPI and past env:** [API_KEY](https://docs.coinapi.io/market-data/rest-api/metadata/list-all-assets)
+  - **Get a FREE API KEY on CoinsAPI and past env *API_KEY*:** [APIKEY](https://docs.coinapi.io/market-data/rest-api/metadata/list-all-assets)
 
-  - **Get Secret and past env:**
-    `EDITOR="code --wait" rails credentials:edit `
+  - **Generate Secret and past env *SECRET_ENV*:**
+    `bundle exec rake secret`
 
   - **Create coins on db:**
     `rails rest:create_coins`
