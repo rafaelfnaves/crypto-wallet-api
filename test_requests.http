@@ -1,0 +1,24 @@
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+  "username": "rafael@email.com",
+  "password": "123456",
+  "name": "Rafael Naves"
+}
+
+###
+
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+  "username": "rafaelnaves", 
+  "password": "123456"
+}
+
+###
+
+GET http://localhost:3000/auto_login
+content-type: application/json
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.AMN4RUFphNOk_5rNRWYo_mynBlGWu29XlLSKYdYtfBs
