@@ -11,7 +11,7 @@ API for querying cryptocurrencies
   - postgresql 15
 
 * Configuration
-  `bundle install`
+  - `bundle install`
 
 * Database creation
   - `rails db:create`
