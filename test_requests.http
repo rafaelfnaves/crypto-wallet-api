@@ -71,3 +71,8 @@ Authorization: Basic Token
 DELETE http://localhost:3000/wallets/6
 content-type: application/json
 Authorization: Basic Token
+
+### Get Periods price of coin
+GET http://localhost:3000/coins/ADA/1HRS
+content-type: application/json
+Authorization: Basic Token

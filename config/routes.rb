@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   resources :coins
+  get '/coins/:id/:period', to: "coins#periods"
+
   resources :wallets
 end
