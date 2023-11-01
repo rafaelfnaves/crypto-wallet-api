@@ -36,11 +36,7 @@ class Coin < ApplicationRecord
     request["X-CoinAPI-Key"] = ENV['API_KEY']
     response = http.request(request)
     
-    begin
-      coin = JSON.parse(response.body) 
-      coin[0]
-    rescue Exception => error
-      puts "Error on consult #{asset_id} on CoinAPI: #{error.message}"
-    end
+    coin = JSON.parse(response.body) if response.code == "200"
+    coin[0]
   end
 end
