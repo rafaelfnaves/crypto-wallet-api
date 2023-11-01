@@ -23,17 +23,24 @@ class Coin < ApplicationRecord
     request["Accept"] = "application/json"
     request["X-CoinAPI-Key"] = ENV['API_KEY']
     response = http.request(request)
-    data = JSON.parse(response.body)
-    # coinPrices = data.pluck('price_close')
+
+    JSON.parse(response.body)
+  end
+
+  def self.get_coin(asset_id)
+    url = URI("https://rest.coinapi.io/v1/assets/#{asset_id}")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    request = Net::HTTP::Get.new(url)
+    request["Accept"] = "application/json"
+    request["X-CoinAPI-Key"] = ENV['API_KEY']
+    response = http.request(request)
     
-    # previous = coinPrices[-2]
-    # current = coinPrices[-1]
-    # percent_change = (current - previous) / previous * 100
-    # percent_format = sprintf("%.2f%%", percent_change)
-    
-    # # Update coin
-    # coin.update_column(:previous, )
-    # coin.update_column(:current, )
-    # coin.update_column(:percent, percent_format)
+    begin
+      coin = JSON.parse(response.body) 
+      coin[0]
+    rescue Exception => error
+      puts "Error on consult #{asset_id} on CoinAPI: #{error.message}"
+    end
   end
 end
