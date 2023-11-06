@@ -76,3 +76,8 @@ Authorization: Basic Token
 GET http://localhost:3000/coins/ADA/1HRS
 content-type: application/json
 Authorization: Basic Token
+
+### Get User
+GET http://localhost:3000/users/1
+content-type: application/json
+Authorization: Basic Token

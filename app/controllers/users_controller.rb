@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:auto_login]
+  before_action :authorized, only: [:auto_login, :show]
 
   # REGISTER
   def create
@@ -30,6 +30,12 @@ class UsersController < ApplicationController
     wallets = Wallet.where(user_id: @user.id)
     render json: {user: @user, wallets: wallets}
   end
+
+  def show
+    wallets = Wallet.where(user_id: @user.id).map{ |i| {wallet: i, coins: i.coins}}
+    render json: { user: @user, wallets: wallets }
+  end
+  
 
   private
 
